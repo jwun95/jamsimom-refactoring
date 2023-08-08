@@ -17,7 +17,6 @@ export default function NavbarItem({
   menuName,
 }: NavarItemProps) {
   const router = useRouter();
-  console.log(router.pathname);
 
   return (
     <IconContext.Provider
