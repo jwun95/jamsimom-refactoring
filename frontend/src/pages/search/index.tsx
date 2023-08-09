@@ -1,0 +1,81 @@
+import Section from "@/components/Section";
+import styled from "@emotion/styled";
+import { BiCheckboxChecked } from "react-icons/bi";
+import { IconContext } from "react-icons";
+
+const tempData = ["박주미", "박강빈"];
+
+export default function Search() {
+  const childrenList = (arr: string[]) => {
+    return arr.map((v) => {
+      return (
+        <Option>
+          <IconContext.Provider
+            value={{
+              size: "24",
+              color: "gray",
+            }}
+          >
+            <CheckWrapper>
+              <BiCheckboxChecked />
+            </CheckWrapper>
+          </IconContext.Provider>
+          <ChildInfo>
+            <div>
+              <span>{v}</span>
+              <span>여 / 24개월</span>
+            </div>
+            <div>
+              <span>특이사항</span>
+            </div>
+            <ul>
+              <li>땅콩 알러지 있음</li>
+            </ul>
+          </ChildInfo>
+        </Option>
+      );
+    });
+  };
+
+  return (
+    <div>
+      <Section title="돌봄대상" required={true}>
+        <div>
+          <Check>
+            <BiCheckboxChecked />
+          </Check>
+          <span>전체선택</span>
+          {childrenList(tempData)}
+        </div>
+      </Section>
+    </div>
+  );
+}
+
+const CheckWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+`;
+
+const Check = styled.button`
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+`;
+
+const Option = styled.div`
+  width: 100%;
+  height: 120px;
+  border: 1px solid #fa9825;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 12px 0px;
+  cursor: pointer;
+  display: flex;
+`;
+
+const ChildInfo = styled.div`
+  margin: 25px 8px;
+`;

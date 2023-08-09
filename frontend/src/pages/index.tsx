@@ -79,8 +79,10 @@ export default function Home() {
               <Tag>대학생</Tag>
               <Tag>미술</Tag>
             </TagWrapper>
+            <div>5.0/5 (4명)</div>
           </InfoDetail>
         </RankerInfo>
+        <div>제 동생처럼 열심히 보살피겠습니다!</div>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -90,11 +92,8 @@ export default function Home() {
             <Typography variant="subtitle2">부모님 리뷰</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
+            <div>"저희 아이가 너무 좋아해요"</div>
+            <div>"시간 약속을 잘 지키고 성실해요"</div>
           </AccordionDetails>
         </Accordion>
       </RankerSection>
