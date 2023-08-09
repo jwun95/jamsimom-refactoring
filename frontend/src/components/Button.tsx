@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import type {
-  DetailedHTMLProps,
-  ButtonHTMLAttributes,
-  PropsWithChildren,
-} from "react";
+import type { DetailedHTMLProps, ButtonHTMLAttributes } from "react";
 
 type ReactButtonProps = DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -45,4 +41,5 @@ const Btn = styled.button<ButtonStyledProps>`
   border-radius: 8px;
   background-color: ${(props) => (props.outline ? "#fff" : "#fcb25b")};
   font-weight: bold;
+  cursor: pointer;
 `;

@@ -27,6 +27,7 @@ const Nav = styled.nav`
   bottom: 0px;
   z-index: 10;
   height: 56px;
+  background-color: #fff;
 `;
 
 const Items = styled.ul`
