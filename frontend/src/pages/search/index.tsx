@@ -4,6 +4,7 @@ import { BiCheckboxChecked } from "react-icons/bi";
 import { IconContext } from "react-icons";
 import Button from "@/components/Button";
 import { useRouter } from "next/router";
+import Header from "@/components/Header";
 
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -55,6 +56,7 @@ export default function Search() {
 
   return (
     <div>
+      <Header title="시터 검색" />
       <Section title="돌봄대상" required={true}>
         <div>
           <Check>
