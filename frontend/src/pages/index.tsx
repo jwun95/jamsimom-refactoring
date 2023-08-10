@@ -4,12 +4,10 @@ import Link from "next/link";
 import Logo from "../../public/Logo.svg";
 import Image from "next/image";
 import { AiOutlineSetting } from "react-icons/ai";
-import { BsFillBookmarkFill } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import Button from "@/components/Button";
-import Tag from "@/components/Tag";
 import { useRouter } from "next/router";
-import ProfileImg from "../../public/profile.jpg";
+import SitterCard from "@/components/SitterCard";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -52,37 +50,7 @@ export default function Home() {
           <RankerTitle>금주의 인기 시터</RankerTitle>
           <RankerDetailButton>더보기 &#62;</RankerDetailButton>
         </RankerHeader>
-        <RankerInfo>
-          <ProfileImage>
-            <Image
-              style={{ objectFit: "cover", borderRadius: "50%" }}
-              src={ProfileImg}
-              width={80}
-              height={80}
-              alt="profile"
-            />
-          </ProfileImage>
-          <InfoDetail>
-            <NamePrefer>
-              <div>
-                <InfoName>박주영</InfoName>&nbsp;&nbsp;여 / 20대
-              </div>
-              <PreferButton>
-                <BsFillBookmarkFill />
-              </PreferButton>
-            </NamePrefer>
-            <TagWrapper>
-              <Tag>대학생</Tag>
-              <Tag>미술</Tag>
-            </TagWrapper>
-            <TagWrapper>
-              <Tag>대학생</Tag>
-              <Tag>미술</Tag>
-            </TagWrapper>
-            <div>5.0/5 (4명)</div>
-          </InfoDetail>
-        </RankerInfo>
-        <div>제 동생처럼 열심히 보살피겠습니다!</div>
+        <SitterCard name="박주영" />
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -124,38 +92,6 @@ const AbsoluteLayer = styled.div`
 
 const RankerSection = styled.section``;
 
-const RankerInfo = styled.div`
-  padding: 16px 16px 12px 16px;
-  display: flex;
-  height: 139px;
-`;
-
-const ProfileImage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  margin-right: 8px;
-`;
-
-const InfoDetail = styled.div`
-  width: 80%;
-`;
-const InfoName = styled.span`
-  font-weight: bold;
-`;
-
-const NamePrefer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const PreferButton = styled.button`
-  border: none;
-  background-color: #fff;
-  cursor: pointer;
-`;
-
 const RankerHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -174,9 +110,4 @@ const RankerDetailButton = styled.button`
   font-weight: bold;
   background-color: #fff;
   font-size: 14px;
-`;
-
-const TagWrapper = styled.div`
-  display: flex;
-  margin: 8px 0px;
 `;

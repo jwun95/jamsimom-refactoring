@@ -4,13 +4,13 @@ import styled from "@emotion/styled";
 type TagProps = {
   onClick?: () => void;
   children: React.ReactNode;
-  color?: boolean;
+  color?: string;
   btn?: boolean;
 };
 
 export default function Tag({
   children,
-  color = false,
+  color = "#fbe7d9",
   btn = false,
   onClick,
 }: TagProps) {
@@ -19,7 +19,7 @@ export default function Tag({
       {btn ? (
         <TagButton>{children}</TagButton>
       ) : (
-        <TagBasic>
+        <TagBasic color={color}>
           <span>{children}</span>
         </TagBasic>
       )}
@@ -27,16 +27,16 @@ export default function Tag({
   );
 }
 
-const TagButton = styled.button``;
-
 const TagBasic = styled.div`
   max-width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2.5px 6px;
-  background-color: #fbe7d9;
+  background-color: ${(props) => props.color};
   border-radius: 10px;
   height: 22px;
   font-size: 12px;
 `;
+
+const TagButton = styled.button``;
