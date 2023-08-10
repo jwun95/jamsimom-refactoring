@@ -2,14 +2,26 @@ import Section from "@/components/Section";
 import styled from "@emotion/styled";
 import { BiCheckboxChecked } from "react-icons/bi";
 import { IconContext } from "react-icons";
+import Button from "@/components/Button";
+import { useRouter } from "next/router";
+
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const tempData = ["박주미", "박강빈"];
 
 export default function Search() {
+  const router = useRouter();
+
+  const searchHandleClick = () => {
+    router.push("/search/list");
+  };
+
   const childrenList = (arr: string[]) => {
     return arr.map((v) => {
       return (
-        <Option>
+        <Option key={v}>
           <IconContext.Provider
             value={{
               size: "24",
@@ -37,6 +49,10 @@ export default function Search() {
     });
   };
 
+  // const dateHandleChange = (value: Date, context: Date) => {
+  //   console.log(value, context);
+  // };
+
   return (
     <div>
       <Section title="돌봄대상" required={true}>
@@ -48,6 +64,17 @@ export default function Search() {
           {childrenList(tempData)}
         </div>
       </Section>
+      <Section title="날짜" required={true}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker timezone="system" />
+        </LocalizationProvider>
+      </Section>
+      <Section title="시간" required={true}>
+        test
+      </Section>
+      <Button w="100%" onClick={searchHandleClick}>
+        시터 검색
+      </Button>
     </div>
   );
 }
