@@ -90,7 +90,9 @@ const AbsoluteLayer = styled.div`
   right: 16px;
 `;
 
-const RankerSection = styled.section``;
+const RankerSection = styled.section`
+  margin-top: 12px;
+`;
 
 const RankerHeader = styled.div`
   display: flex;
@@ -110,4 +112,5 @@ const RankerDetailButton = styled.button`
   font-weight: bold;
   background-color: #fff;
   font-size: 14px;
+  cursor: pointer;
 `;

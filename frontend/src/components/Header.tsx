@@ -16,7 +16,7 @@ export default function Header({ title }: HeaderProps) {
       <IconContext.Provider
         value={{
           size: "24",
-          color: "gray",
+          color: "black",
         }}
       >
         <BackButton onClick={() => router.back()}>

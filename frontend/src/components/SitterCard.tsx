@@ -14,9 +14,10 @@ const temp2 = ["잠시맘 교육 인증", "교직이수"];
 
 type SitterCardProps = {
   name: string;
+  onClick?: () => void;
 };
 
-export default function SitterCard({ name }: SitterCardProps) {
+export default function SitterCard({ name, onClick }: SitterCardProps) {
   const [favorite, setFavorite] = useState<boolean>(false);
 
   const handleClick = () => {
@@ -40,7 +41,7 @@ export default function SitterCard({ name }: SitterCardProps) {
 
   return (
     <>
-      <Container>
+      <Container onClick={onClick}>
         <ProfileImage>
           <Image
             style={{ objectFit: "cover", borderRadius: "50%" }}
@@ -91,9 +92,13 @@ export default function SitterCard({ name }: SitterCardProps) {
 }
 
 const Container = styled.div`
+  cursor: ${(props) => (props.onClick ? "pointer" : "auto")};
   padding: 16px 16px 12px 16px;
   display: flex;
   height: 139px;
+  &:hover {
+    border: ${(props) => (props.onClick ? "1px solid #FCB25B" : "auto")};
+  }
 `;
 
 const ProfileImage = styled.div`
