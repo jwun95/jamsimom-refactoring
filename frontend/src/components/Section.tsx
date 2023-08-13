@@ -7,21 +7,29 @@ type SectionProps = {
   title: string;
 };
 
+/** 기본 Section
+ * required = true면 필수 사항 표시
+ */
+
 export default function Section({
   children,
   required = false,
   title,
 }: SectionProps) {
   return (
-    <section>
+    <Container>
       <SectionHeader>
         <Title>{title}</Title>
         {required && <Required> *</Required>}
       </SectionHeader>
-      <div>{children}</div>
-    </section>
+      {children}
+    </Container>
   );
 }
+
+const Container = styled.section`
+  margin-bottom: 24px;
+`;
 
 const SectionHeader = styled.div`
   padding: 16px 0px;
@@ -33,5 +41,5 @@ const Title = styled.span`
 
 const Required = styled.span`
   font-weight: bold;
-  color: #904309;
+  //color: #fff;
 `;

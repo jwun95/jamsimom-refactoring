@@ -12,6 +12,9 @@ export default function SearchSubmit() {
       <Section title="시터 정보">
         <SitterCard name="박주영" />
       </Section>
+			<Section title="선택 정보">
+
+			</Section>
     </>
   );
 }
