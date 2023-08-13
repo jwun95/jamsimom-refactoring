@@ -10,9 +10,10 @@ type ContentProps = {
 
 type AccordionProps = {
   children?: React.ReactNode;
+  title: string;
 };
 
-export default function Accordion({ children }: AccordionProps) {
+export default function Accordion({ children, title }: AccordionProps) {
   const [active, setActive] = useState<boolean>(true);
 
   const handleClick = () => {
@@ -21,29 +22,30 @@ export default function Accordion({ children }: AccordionProps) {
 
   return (
     <Container>
-      <Header>
-        <Title>Accordion</Title>
-        <ActiveButton onClick={handleClick}>
-          <IconContext.Provider
-            value={{
-              size: "24",
-            }}
-          >
-            {active ? <BsChevronUp /> : <BsChevronDown />}
-          </IconContext.Provider>
-        </ActiveButton>
+      <Header onClick={handleClick}>
+        <Title>{title}</Title>
+        <IconContext.Provider
+          value={{
+            size: "24",
+          }}
+        >
+          {active ? <BsChevronUp /> : <BsChevronDown />}
+        </IconContext.Provider>
       </Header>
-      <Content active={active}>{children}ggg</Content>
+      <Content active={active}>{children}</Content>
     </Container>
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 12px 0px;
+`;
 
 const Header = styled.div`
   padding: 12px 16px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 `;
 
 const Title = styled.span`
@@ -51,15 +53,9 @@ const Title = styled.span`
   font-weight: 700;
 `;
 
-const ActiveButton = styled.button`
-  background-color: white;
-  border: none;
-  cursor: pointer;
-`;
-
 const Content = styled.div<ContentProps>`
-  max-height: ${(props) => (props.active ? "0px" : "fit-content")};
-  margin: 8px 12px;
+  max-height: ${(props) => (props.active ? "fit-content" : "0")};
+  margin: 0px 12px;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: max-height 0.2s ease-out;
 `;

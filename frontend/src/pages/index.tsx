@@ -46,7 +46,18 @@ export default function Home() {
           <RankerDetailButton>더보기 &#62;</RankerDetailButton>
         </RankerHeader>
         <SitterCard name="박주영" />
-        <Accordion />
+        <Accordion title="부모님 리뷰">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt rem,
+          illo quisquam ad sint quaerat ducimus consectetur eos neque soluta
+          velit veniam deserunt reprehenderit nihil hic quia magni praesentium
+          voluptatem!
+        </Accordion>
+        <Accordion title="부모님 리뷰">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+          recusandae nulla aut dicta alias illo error asperiores velit pariatur
+          harum, dolore tempora dolorem beatae molestias. Minus perspiciatis
+          animi consequatur voluptatibus?
+        </Accordion>
       </RankerSection>
     </div>
   );
