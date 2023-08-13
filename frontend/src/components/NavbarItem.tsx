@@ -25,23 +25,25 @@ export default function NavbarItem({
         size: "24",
       }}
     >
-      <Item>
+      <Container>
         <NavLink href={url}>
-          <div>{children}</div>
+          <Icon>{children}</Icon>
           <NavTitle color={url === router.pathname ? "#5A2F0F" : "gray"}>
             {menuName}
           </NavTitle>
         </NavLink>
-      </Item>
+      </Container>
     </IconContext.Provider>
   );
 }
 
-const Item = styled.li`
+const Container = styled.div`
   padding: 9px;
   width: 55px;
   height: 38px;
 `;
+
+const Icon = styled.div``;
 
 const NavLink = styled(Link)`
   display: flex;

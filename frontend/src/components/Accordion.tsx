@@ -54,8 +54,7 @@ const Title = styled.span`
 `;
 
 const Content = styled.div<ContentProps>`
-  max-height: ${(props) => (props.active ? "fit-content" : "0")};
+  display: ${(props) => (props.active ? "block" : "none")};
   margin: 0px 12px;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
 `;

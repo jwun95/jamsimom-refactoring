@@ -26,8 +26,7 @@ const MainContainer = styled.div`
   max-width: 440px;
   min-width: 360px;
   margin: auto;
-  height: 100vh;
-  padding: 16px 16px 54px 16px;
+  padding: 16px 16px 0px 16px;
 `;
 
 const ContentContainer = styled.main`
