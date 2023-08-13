@@ -8,6 +8,7 @@ import { IconContext } from "react-icons";
 import Button from "@/components/Button";
 import { useRouter } from "next/router";
 import SitterCard from "@/components/SitterCard";
+import Accordion from "@/components/Accordion";
 
 export default function Home() {
   const router = useRouter();
@@ -45,6 +46,7 @@ export default function Home() {
           <RankerDetailButton>더보기 &#62;</RankerDetailButton>
         </RankerHeader>
         <SitterCard name="박주영" />
+        <Accordion />
       </RankerSection>
     </div>
   );
