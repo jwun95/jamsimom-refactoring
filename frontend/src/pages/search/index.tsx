@@ -6,10 +6,6 @@ import Button from "@/components/Button";
 import { useRouter } from "next/router";
 import Header from "@/components/Header";
 
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-
 const tempData = ["박주미", "박강빈"];
 
 export default function Search() {
@@ -50,10 +46,6 @@ export default function Search() {
     });
   };
 
-  // const dateHandleChange = (value: Date, context: Date) => {
-  //   console.log(value, context);
-  // };
-
   return (
     <div>
       <Header title="시터 검색" />
@@ -66,11 +58,7 @@ export default function Search() {
           {childrenList(tempData)}
         </div>
       </Section>
-      <Section title="날짜" required={true}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker timezone="system" />
-        </LocalizationProvider>
-      </Section>
+      <Section title="날짜" required={true}></Section>
       <Section title="시간" required={true}>
         test
       </Section>
